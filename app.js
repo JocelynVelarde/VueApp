@@ -16,6 +16,8 @@ const app = Vue.createApp({
       title: "The Final Empire",
       author: "Brandon Sanderson",
       age: 45,
+      x: 0,
+      y: 0
     };
   },
 
@@ -29,6 +31,17 @@ const app = Vue.createApp({
     toggleShowBooks() {
       this.showBooks = !this.showBooks;
     },
+
+    handleEvent(e){
+        //e.type meand the type of event that was triggered
+        console.log(e, e.type);
+    },
+
+    handleMouseMove(e){
+        //position of the mouse in the box where the event was triggered
+        this.x = e.offsetX;
+        this.y = e.offsetY;
+    }
   },
 });
 //This mounts it on the current DOM, we need an element with this id "#app"
