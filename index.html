@@ -21,7 +21,13 @@
     <h1>Hello Vue App</h1>
     <div id="app">
         <div v-if="showBooks">
-            <p>{{title}} - {{author}} - {{age}}</p>
+            <ul>
+                <!-- v-for is a cycle, first the item name, then in "array-name"-->
+                <li v-for="book in books">
+                    <h3>{{book.title}}</h3>
+                    <p>{{book.author}}</p>
+                </li>
+            </ul>
         </div>
 
         <button @click="toggleShowBooks">
