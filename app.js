@@ -12,18 +12,25 @@ const app = Vue.createApp({
   //we create a function that returns an object, the object attribute can be displayed as a variable then
   data() {
     return {
+      url: "https://www.google.com",
       showBooks: true,
       books: [{
             title: "Name of the Wind",
             author: "Patrick Rothfuss",
+            image: "assets/nameOfTheWind.jpg",
+            isFav: true,
       },
         {
             title: "The Final Empire",
             author: "Brandon Sanderson",
+            image: "assets/theFinalEmpire.jpg",
+            isFav: false,
         },
         {
             title: "The Hero of Ages",
             author: "Brandon Sanderson",
+            image: "assets/theHeroAges.jpg",
+            isFav: true,
         },
         ],
       x: 0,

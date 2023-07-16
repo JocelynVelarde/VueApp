@@ -6,13 +6,31 @@
     <title>Document</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <style>
-        .box {
-            padding: 100px 0;
-            width: 400px;
-            text-align: center;
-            background-color: #ddd;
-            margin: 20px;
-            display: inline-block;
+        body {
+            background: white;
+            max-width: 960px;
+            margin: 20px auto;
+        }
+
+        p,
+        h3,
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style-type: none;
+            background: rgba(65, 161, 173, 0.178);
+            margin: 20px auto;
+            padding: 10px 20px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        li.fav{
+            background: rgba(65, 161, 173, 0.5);
         }
     </style>
 </head>
@@ -20,10 +38,18 @@
 <body>
     <h1>Hello Vue App</h1>
     <div id="app">
+        <!-- v-bind is a directive to react-->
+        <!-- : is a shortcut for v-bind -->
+        <a v-bind:href="url" target="_blank">Google</a>
+        <br>
+        <a :href="url" target="_blank">Other Google</a>
         <div v-if="showBooks">
             <ul>
                 <!-- v-for is a cycle, first the item name, then in "array-name"-->
-                <li v-for="book in books">
+                <li v-for="book in books" :class="{fav: book.isFav}">
+                    <!--we need to bind everything-->
+                    <img :src="book.image" :alt="book.title" width="200" height="200">
+
                     <h3>{{book.title}}</h3>
                     <p>{{book.author}}</p>
                 </li>
@@ -34,13 +60,6 @@
             <span v-if="showBooks">Hide Books</span>
             <span v-else>Show Books</span>
         </button>
-
-        <br>
-        <!-- mouse events -->
-        <div class="box" @mouseover="handleEvent">mouseover (enter)</div>
-        <div class="box" @mouseleave="handleEvent">mouseleave</div>
-        <div class="box" @dblclick="handleEvent">double click</div>
-        <div class="box" @mousemove="handleMouseMove">position - {{x}} {{y}}</div>
 
 
         <!--v-on is one directive to react, there are many more-->
