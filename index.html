@@ -10,12 +10,15 @@
 <body>
     <h1>Hello Vue App</h1>
     <div id="app">
+        <div v-if="showBooks">
         <p>{{title}} - {{author}} - {{age}}</p>
+    </div>
+    <button @click ="toggleShowBooks">
+        <span v-if="showBooks">Hide Books</span>
+        <span v-else>Show Books</span>
+    </button>
         <!--v-on is one directive to react, there are many more-->
-        <button v-on:click="age++">Increase age</button>
-        <button v-on:click="age--">Decrease age</button>
         <!-- @ is a shortcut for v-on -->
-    <div @click = "changeTitle('The Selection')" >Change title</div>
     </div>
     <script src="app.js"></script>
 </body>

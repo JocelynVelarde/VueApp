@@ -12,6 +12,7 @@ const app = Vue.createApp({
   //we create a function that returns an object, the object attribute can be displayed as a variable then
   data() {
     return {
+      showBooks: true,
       title: "The Final Empire",
       author: "Brandon Sanderson",
       age: 45,
@@ -21,8 +22,12 @@ const app = Vue.createApp({
   methods: {
     //we create methods inside here
     changeTitle(title) {
-        //always use this to refer to a variable inside the data object
+      //always use this to refer to a variable inside the data object
       this.title = title;
+    },
+
+    toggleShowBooks() {
+      this.showBooks = !this.showBooks;
     },
   },
 });
