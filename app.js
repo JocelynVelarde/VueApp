@@ -12,11 +12,19 @@ const app = Vue.createApp({
   //we create a function that returns an object, the object attribute can be displayed as a variable then
   data() {
     return {
-        title: "The Final Empire",
-        author: "Brandon Sanderson",
-        age: 45
-    }
-},
+      title: "The Final Empire",
+      author: "Brandon Sanderson",
+      age: 45,
+    };
+  },
+
+  methods: {
+    //we create methods inside here
+    changeTitle(title) {
+        //always use this to refer to a variable inside the data object
+      this.title = title;
+    },
+  },
 });
 //This mounts it on the current DOM, we need an element with this id "#app"
 //We add that id too on the html file and now our vue app will control everythung inside that element

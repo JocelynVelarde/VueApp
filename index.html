@@ -11,6 +11,11 @@
     <h1>Hello Vue App</h1>
     <div id="app">
         <p>{{title}} - {{author}} - {{age}}</p>
+        <!--v-on is one directive to react, there are many more-->
+        <button v-on:click="age++">Increase age</button>
+        <button v-on:click="age--">Decrease age</button>
+        <!-- @ is a shortcut for v-on -->
+    <div @click = "changeTitle('The Selection')" >Change title</div>
     </div>
     <script src="app.js"></script>
 </body>
